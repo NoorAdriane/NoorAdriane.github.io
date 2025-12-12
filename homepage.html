@@ -1,101 +1,135 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Noortje Adriane Alkemade — Cybersecurity Portfolio</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noortje Adriane Alkemade – Cybersecurity Portfolio</title>
+  
   <style>
     :root {
       /* DARK GREY + PASTEL CYBER HARMONY */
-      --bg: #1f1f1f;           /* deep neutral dark grey */
-      --panel: #2a2a2a;        /* soft dark panel */
-      --text: #e7e7e7;         /* soft warm white */
-      --accent-sage: #c7d8c4;  /* pastel sage green */
-      --accent-lilac: #d8c9e8; /* pastel lilac */
-      --accent-rose: #e8cfc7;  /* pastel rose */
-      --accent-blue: #c7d4e8;  /* pastel muted cyber blue */
+      --bg: #1e1e1e;
+      --panel: #262626;
+      --text: #e6e6e6;
+      --accent-sage: #c7d8c4;
+      --accent-lilac: #d8c9e8;
+      --accent-rose: #e8cfc7;
       --radius: 18px;
-      --shadow: 0 10px 25px rgba(0,0,0,0.35);
+      --shadow: 0 8px 20px rgba(0,0,0,0.35);
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Inter", sans-serif; }
 
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: "Inter", sans-serif;
-      line-height: 1.8;
-      position: relative;
+      line-height: 1.7;
     }
 
-    /* SUBTLE CYBER PASTEL AURA */
+    /* SOFT CYBER GLOW */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 30%, var(--accent-sage) 0%, transparent 45%),
-        radial-gradient(circle at 80% 70%, var(--accent-lilac) 0%, transparent 45%),
-        radial-gradient(circle at 50% 110%, var(--accent-rose) 0%, transparent 55%);
-      opacity: 0.18;
+        radial-gradient(circle at 20% 25%, var(--accent-sage) 0%, transparent 40%),
+        radial-gradient(circle at 80% 75%, var(--accent-lilac) 0%, transparent 45%),
+        radial-gradient(circle at 50% 110%, var(--accent-rose) 0%, transparent 50%);
+      opacity: 0.15;
       z-index: -1;
     }
 
+    /* HEADER */
     header {
+      padding: 5rem 2rem 3rem;
       text-align: center;
-      padding: 4rem 2rem 2rem;
+      max-width: 850px;
+      margin: auto;
     }
     header h1 {
-      color: var(--accent-lilac);
       font-size: 3rem;
-      letter-spacing: -1px;
+      color: var(--accent-lilac);
+      margin-bottom: 0.7rem;
     }
     header p {
+      font-size: 1.3rem;
       color: var(--accent-sage);
-      font-size: 1.2rem;
-      font-weight: 500;
     }
 
+    /* NAV */
     nav {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1.5rem;
+      gap: 2.5rem;
+      padding: 1.5rem 0;
     }
     nav a {
       color: var(--accent-rose);
-      text-decoration: none;
       font-weight: 600;
+      text-decoration: none;
       border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
       transition: .25s;
     }
     nav a:hover {
-      border-color: var(--accent-blue);
+      border-color: var(--accent-lilac);
     }
 
+    /* SECTIONS */
     .section {
-      max-width: 980px;
+      max-width: 900px;
       margin: 3rem auto;
-      padding: 2rem 2.5rem;
+      padding: 2.5rem;
       background: var(--panel);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      position: relative;
-      border: 1px solid #3a3a3a;
+      border: 1px solid #333;
     }
-
     .section h2 {
       color: var(--accent-lilac);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
+      font-size: 1.9rem;
     }
 
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media(max-width: 800px){
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    /* SKILLS */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1rem;
+    }
+    .skill {
+      background: #313131;
+      padding: 1rem;
+      border-radius: var(--radius);
+      text-align: center;
+      font-weight: 600;
+      border: 1px solid #3d3d3d;
+      color: var(--accent-sage);
+    }
+
+    /* PROJECTS */
     .project {
       background: #2f2f2f;
-      padding: 1.5rem;
+      padding: 1.7rem;
       border-radius: var(--radius);
-      border: 1px solid #3d3d3d;
-      margin-bottom: 1.5rem;
+      border: 1px solid #3a3a3a;
+      margin-bottom: 2rem;
     }
-
+    .project h3 {
+      color: var(--accent-rose);
+      margin-bottom: .7rem;
+      font-size: 1.4rem;
+    }
     .project img {
       width: 100%;
       border-radius: var(--radius);
@@ -103,107 +137,110 @@
       box-shadow: var(--shadow);
     }
 
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 2rem;
-      color: #b3b3b3;
-      font-size: .9rem;
+      padding: 2.5rem;
+      color: #a6a6a6;
+      margin-top: 4rem;
     }
   </style>
 </head>
+
 <body>
-  <div class="container fade">
 
-    <header>
-      <div class="logo"><strong>NAA</strong></div>
-      <div>
-        <h1>Noortje Adriane Alkemade</h1>
-        <p>Cybersecurity Student — Linux • Python • Forensics • OSINT</p>
-      </div>
-      <nav>
-        <a href="#about">Over mij</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projecten</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+  <header>
+    <h1>Noortje Adriane Alkemade</h1>
+    <p>Cybersecurity Student · OSINT · Digital Forensics · Ethical Hacking</p>
+  </header>
 
-    <main>
+  <nav>
+    <a href="#about">Over mij</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projecten</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-      <section class="card grid-2" id="about">
-        <div>
-          <h2>Over mij</h2>
-          <p>Ik ben Noortje, derdejaars Cyber Security student met interesses in ethical hacking, digital forensics, OSINT en systeem­architecturen.</p>
-          <p>Ik werk graag met Linux, Bash, Python en Windows internals. Tijdens studio's zoals DarkTech en projecten op school heb ik gewerkt aan smart devices, analysewerk en AI-smarthome simulaties.</p>
+  <section class="section" id="about">
+    <h2>Over Mij</h2>
+    <div class="about-grid">
+      <p>
+        Ik ben Noortje, een derdejaars Cyber Security student met een passie voor ethical hacking,
+        digitale forensics, OSINT en systeem-analyse. Ik hou van gestructureerde chaos: puzzels,
+        datapaden, logs en securityvraagstukken.
+      </p>
 
-          <span class="cyber-badge">★ forensic • osint • hardware • linux</span>
-        </div>
+      <p>
+        Tijdens mijn studie, stage en projecten werkte ik o.a. met Linux, Bash, Python, Windows internals,
+        smart devices en netwerk-structuren. Binnenkort start ik mijn minor Forensic Research Skills
+        (OSINT, DNA-tech, facial recognition & digital forensics).
+      </p>
+    </div>
+  </section>
 
-        <aside class="profile-meta">
-          <strong>Noortje A. Alkemade</strong>
-          <div>3e jaars Cyber Security</div>
-          <div style="margin-top:6px">Focus: Linux, Forensics, Hardware Security</div>
-        </aside>
-      </section>
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Linux / Bash</div>
+      <div class="skill">Python</div>
+      <div class="skill">OSINT</div>
+      <div class="skill">Ethical Hacking</div>
+      <div class="skill">Windows Internals</div>
+      <div class="skill">Hardware Security</div>
+    </div>
+  </section>
 
-      <section class="card" id="skills">
-        <h2>Skills</h2>
-        <div class="skills">
-          <span class="skill">Linux / Bash</span>
-          <span class="skill">Python</span>
-          <span class="skill">Ethical Hacking</span>
-          <span class="skill">OSINT</span>
-          <span class="skill">Windows Internals</span>
-          <span class="skill">Hardware Security</span>
-        </div>
-      </section>
+  <section class="section" id="projects">
+    <h2>Projecten</h2>
 
-      <section class="card" id="projects">
-        <h2>Projecten</h2>
-        <div class="project">
-          <h3>Miro — Windows Architectuur Map</h3>
-          <p>Uitgebreide systeemmap: kernel vs user mode, hardwarelagen, AD-structuur en protocollen.</p>
-          <p><a href="https://miro.com/app/board/uXjVI4IG2_4=/?share_link_id=600315991262" target="_blank">Bekijk Miro →</a></p>
-          <img src="Windows-system image 1.jpg" alt="Windows architecture part 1">
-          <img src="Windows-system image 2.jpg" alt="Windows architecture part 2">
-        </div>
+    <div class="project">
+      <h3>Miro Windows Architectuur Map</h3>
+      <p>
+        Een uitgebreide mapping van de volledige Windows architectuur: kernel, user mode,
+        hardware layers, protocollen en Active Directory.
+      </p>
+      <a href="https://miro.com/app/board/uXjVI4IG2_4=/?share_link_id=600315991262" target="_blank">Bekijk mijn Miro Board →</a>
+      <img src="Windows-system image 1.jpg" alt="Windows architecture 1">
+      <img src="Windows-system image 2.jpg" alt="Windows architecture 2">
+    </div>
 
-        <div class="project">
-          <h3>DarkTech Studio — Smart Hardware</h3>
-          <p>Ontwikkeld: slimme lamp, smartlock, smart powerplugs en AI-smarthome simulatie.</p>
-        </div>
+    <div class="project">
+      <h3>Smart Hardware – DarkTech Studio</h3>
+      <p>
+        Tijdens deze studio werkte ik aan smart hardware projecten zoals:
+      </p>
+      <ul>
+        <li>Web-controlled lamp</li>
+        <li>Smartlock met web dashboard</li>
+        <li>Smart powerplugs</li>
+        <li>AI-driven smarthome simulatie</li>
+      </ul>
+    </div>
 
-        <div class="project">
-          <h3>TryHackMe & HackTheBox</h3>
-          <p>Hands-on uitdagingen: privilege escalation, enumeration, offensive scripting.</p>
-        </div>
+    <div class="project">
+      <h3>TryHackMe & HackTheBox</h3>
+      <p>
+        Ervaring met privilege escalation, enumeration, web exploitation en offensive tooling.
+      </p>
+    </div>
 
-        <div class="project">
-          <h3>Forensic Research Skills (Minor)</h3>
-          <p>Komend semester: digitale forensics, OSINT, facial recognition & DNA-analyse.</p>
-        </div>
-      </section>
+    <div class="project">
+      <h3>Toekomst: Minor Forensic Research Skills</h3>
+      <p>
+        Forensisch onderzoek, OSINT, digitale opsporing, DNA-tech en facial recognition.
+      </p>
+    </div>
 
-      <section class="card" id="contact">
-        <h2>Contact</h2>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <strong>Email</strong>
-            <div style="margin-top:6px">noortje.alkemade@hva.nl</div>
-          </div>
-          <div class="contact-card">
-            <strong>LinkedIn</strong>
-            <div style="margin-top:6px">(optioneel toevoegen)</div>
-          </div>
-        </div>
-      </section>
+  </section>
 
-    </main>
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <strong>noortje.alkemade@hva.nl</strong></p>
+  </section>
 
-    <footer>
-      © 2025 Noortje Adriane Alkemade — Cybersecurity Portfolio
-    </footer>
+  <footer>
+    © 2025 Noortje Adriane Alkemade — Cybersecurity Portfolio
+  </footer>
 
-  </div>
 </body>
 </html>
