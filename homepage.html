@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Cybersecurity</title>
+  <style>
+    :root {
+      --bg: #0d0d0f;
+      --card: #17171a;
+      --accent: #9bc4c7; /* pastel blauwgroen */
+      --text: #e7e7e7;
+      --subtle: #9b9b9b;
+      --radius: 14px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    header p {
+      font-size: 1.1rem;
+      color: var(--subtle);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.5rem;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    nav a:hover {
+      opacity: 0.75;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 0 20px rgba(0,0,0,0.45);
+    }
+    .section h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media(max-width: 700px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Skills */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .skill {
+      background: #1f1f22;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid #222227;
+      text-align: center;
+    }
+
+    /* Projects */
+    .project {
+      background: #1f1f22;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid #222227;
+      margin-bottom: 1.5rem;
+    }
+    .project h3 {
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .project a {
+      display: inline-block;
+      margin-top: 0.6rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--subtle);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jouw Naam</h1>
+    <p>Cybersecurity | Ethical Hacking | IT Security</p>
+  </header>
+
+  <nav>
+    <a href="#about">Over mij</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projecten</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="section" id="about">
+    <h2>Over Mij</h2>
+    <div class="about-grid">
+      <p>
+        Ik ben een cybersecurity-enthousiast met een passie voor ethical hacking,
+        systeembeveiliging en digitale forensics. Mijn focus ligt op het
+        analyseren van kwetsbaarheden en het bouwen van veilige IT-oplossingen.
+      </p>
+      <p>
+        Ik werk graag in een minimalistische dark-mode sfeer, maar met een subtiele
+        pastel touch om het clean en professioneel te houden.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Linux / Terminal</div>
+      <div class="skill">Penetration Testing</div>
+      <div class="skill">Python</div>
+      <div class="skill">Networking</div>
+      <div class="skill">OSINT</div>
+      <div class="skill">Web Security</div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projecten</h2>
+
+    <div class="project">
+      <h3>CTF Write-ups</h3>
+      <p>Een verzameling write-ups van CTF challenges die ik heb opgelost.</p>
+      <a href="#">Bekijk project →</a>
+    </div>
+
+    <div class="project">
+      <h3>Personal Vulnerability Scanner</h3>
+      <p>Kleine scanner in Python om simpele web kwetsbaarheden te detecteren.</p>
+      <a href="#">Bekijk project →</a>
+    </div>
+
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Wil je met mij in contact komen? Stuur gerust een bericht:</p>
+    <p>Email: <strong>jouwemail@example.com</strong></p>
+  </section>
+
+  <footer>
+    © 2025 Jouw Naam — Cybersecurity Portfolio
+  </footer>
+</body>
+</html>
