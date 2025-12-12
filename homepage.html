@@ -4,108 +4,179 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Noortje Adriane Alkemade — Cybersecurity Portfolio</title>
-  <meta name="description" content="Portfolio van Noortje Alkemade — Cybersecurity student, Linux, Python, ethical hacking, hardware & forensics." />
+
   <style>
-    /* ----------------- THEME: Dark Elegant + OSINT Sage + Cute-Professional Blend (Option C) ----------------- */
+    /* --------------------------------------------------
+       NEW THEME — Soft Cybersecurity Pastel Dark Mode
+       ✦ geen zwart
+       ✦ geen neon
+       ✦ zachte taupe / mauve / sage pastel
+       ✦ cute + forensic + cyber aesthetic
+    -------------------------------------------------- */
+
     :root{
-      --bg-deep: #191617;         /* deep plum/espresso */
-      --bg-soft: #232122;         /* slightly lighter panels */
-      --panel:  rgba(255,255,255,0.02);
-      --muted:  #aea59e;          /* warm muted beige */
-      --text:   #f3efe9;          /* soft off-white */
-      --accent-sage:  #c9d7c8;    /* pastel sage */
-      --accent-lav:   #d8cfe6;    /* dusty lavender */
-      --accent-rose:  #e9dcd2;    /* vintage rose-beige */
-      --accent-deep:  #4a2f3f;    /* deep plum/brown */
-      --glass:  rgba(255,255,255,0.03);
-      --radius: 14px;
-      --shadow: 0 10px 30px rgba(8,6,4,0.45);
+      --bg: #2e2b30;               /* zacht mauve-taupe donker, niet zwart */
+      --bg-panel: #363338;         /* iets lichtere panelen */
+      --surface: rgba(255,255,255,0.05);
+
+      --text-main: #e7e2dd;        /* zacht warm wit, niet fel */
+      --text-muted: #c7c0b9;       /* pastel beige */
+
+      --accent-sage: #d8e3d5;      /* pastel sage groen */
+      --accent-lav: #e1d8ef;       /* lichte mauve/lavender pastel */
+      --accent-rose: #eadcd5;      /* zachte warm rose */
+      --accent-line: rgba(255,255,255,0.08);
+
+      --radius: 16px;
+      --shadow: 0 12px 28px rgba(0,0,0,0.35);
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
     body{
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(1200px 700px at 10% 10%, rgba(200,215,200,0.03), transparent 6%),
-                  radial-gradient(900px 500px at 90% 90%, rgba(200,200,230,0.02), transparent 8%),
-                  var(--bg-deep);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
-      padding-bottom:80px;
+      font-family: Inter, system-ui;
+      background:
+        radial-gradient(900px 600px at 5% 5%, rgba(216,227,213,0.06), transparent),
+        radial-gradient(900px 600px at 95% 95%, rgba(225,216,239,0.06), transparent),
+        var(--bg);
+      color:var(--text-main);
+      line-height:1.65;
+      padding-bottom:70px;
     }
+    .container{max-width:1050px;margin:auto;padding:22px}
 
-    .container{max-width:1080px;margin:48px auto;padding:24px}
-
-    /* Header */
-    header{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+    /* header */
+    header{display:flex;align-items:center;gap:18px;margin-bottom:12px}
     .logo{
-      width:72px;height:72px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(135deg,var(--accent-rose),rgba(255,255,255,0.02));
-      box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.03)
+      width:72px;height:72px;border-radius:var(--radius);
+      background:linear-gradient(135deg,var(--accent-rose),rgba(255,255,255,0.04));
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,0.08);
     }
-    .logo strong{color:var(--accent-deep);font-size:20px;letter-spacing:1px}
-    header .title{flex:1}
-    header h1{font-size:28px;color:var(--text);margin-bottom:6px}
-    header p{color:var(--muted);font-weight:500}
+    .logo strong{color:#4d3a42;font-size:20px}
 
-    /* nav */
-    nav{display:flex;gap:14px;align-items:center;justify-content:flex-end;margin-bottom:18px}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;font-weight:600}
-    nav a:hover{color:var(--text);background:linear-gradient(90deg, rgba(201,215,200,0.03), rgba(216,207,230,0.02));backdrop-filter:blur(4px)}
+    header h1{font-size:27px;margin-bottom:4px;color:var(--text-main)}
+    header p{color:var(--text-muted);font-weight:500;font-size:15px}
 
-    /* Main sections */
-    .card{background:linear-gradient(180deg,var(--bg-soft), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,0.02); margin-bottom:22px}
-    .card h2{color:var(--accent-rose);font-size:20px;margin-bottom:10px}
-    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    nav{display:flex;gap:12px;margin-left:auto}
+    nav a{
+      color:var(--text-muted);
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      transition:0.3s;
+    }
+    nav a:hover{
+      background:rgba(255,255,255,0.08);
+      color:var(--text-main);
+    }
+
+    /* cards */
+    .card{
+      background:var(--bg-panel);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:var(--shadow);
+      padding:24px;
+      margin-top:22px;
+    }
+    .card h2{
+      color:var(--accent-lav);
+      font-size:20px;
+      margin-bottom:10px;
+      letter-spacing:0.3px;
+    }
+
+    .grid-2{display:grid;grid-template-columns:1fr 330px;gap:22px}
+    @media(max-width:900px){.grid-2{grid-template-columns:1fr}}
 
     /* about */
-    .about p{color:var(--muted);font-size:15px}
-    .profile-meta{background:var(--glass);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .meta-row{display:flex;gap:10px;flex-direction:column}
-    .meta-row strong{color:var(--text);font-size:14px}
+    .about p{color:var(--text-muted);font-size:15px;margin-bottom:12px}
+
+    .profile-meta{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:16px;
+      border-radius:var(--radius);
+    }
+    .profile-meta strong{color:var(--accent-rose)}
+    .profile-meta div{font-size:14px;color:var(--text-muted)}
 
     /* skills */
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{background:linear-gradient(180deg, rgba(201,215,200,0.06), rgba(216,207,230,0.02));padding:10px 14px;border-radius:12px;font-weight:700;color:var(--accent-deep)}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .skill{
+      background:linear-gradient(180deg,rgba(256,256,256,0.08),rgba(256,256,256,0.04));
+      padding:10px 14px;
+      border-radius:var(--radius);
+      font-weight:700;
+      color:#4a3c45;
+      border:1px solid rgba(255,255,255,0.08);
+    }
 
     /* projects */
-    .projects{display:grid;grid-template-columns:1fr;gap:16px}
-    .project{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
-    .project h3{color:var(--accent-deep);margin-bottom:6px}
-    .project p{color:var(--muted);font-size:14px}
-    .project a{display:inline-block;margin-top:8px;color:var(--accent-lav);font-weight:700;text-decoration:none}
-    .project img{width:100%;border-radius:10px;margin-top:12px;border:1px solid rgba(0,0,0,0.25);object-fit:cover}
+    .project{
+      background:rgba(255,255,255,0.04);
+      border-radius:var(--radius);
+      padding:16px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .project h3{color:var(--accent-rose);margin-bottom:6px}
+    .project p{color:var(--text-muted);font-size:14px}
+    .project a{color:var(--accent-lav);text-decoration:none;font-weight:700}
+    .project img{width:100%;border-radius:12px;margin-top:12px;border:1px solid rgba(0,0,0,0.2)}
 
-    /* small detail lines */
-    .divider{height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);margin:14px 0;border-radius:2px}
+    .divider{height:1px;background:var(--accent-line);margin:14px 0}
 
     /* contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .contact-card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(233,220,210,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
-    .cta{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent-sage),var(--accent-lav));color:var(--bg-deep);font-weight:800;text-decoration:none}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
 
-    /* footer */
-    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+    .contact-card{
+      background:rgba(255,255,255,0.04);
+      padding:16px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .cta{
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 14px;
+      background:linear-gradient(90deg,var(--accent-sage),var(--accent-lav));
+      border-radius:var(--radius);
+      color:#3d353b;
+      font-weight:800;
+      text-decoration:none;
+    }
 
-    /* responsive */
-    @media(max-width:980px){.grid-2{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.container{padding:18px}}
+    footer{text-align:center;margin-top:40px;color:var(--text-muted);font-size:13px}
 
-    /* subtle animations */
-    .fade-up{animation:fadeUp .6s ease both}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    /* animations */
+    .fade{animation:fadeIn .6s ease both}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+    /* cute cybersecurity elements */
+    .cyber-badge{
+      margin-top:12px;
+      display:inline-block;
+      padding:6px 10px;
+      background:rgba(216,227,213,0.08);
+      border-radius:10px;
+      font-size:12px;
+      color:var(--accent-sage);
+      border:1px solid rgba(216,227,213,0.18);
+    }
 
   </style>
 </head>
 <body>
-  <div class="container fade-up">
+  <div class="container fade">
 
     <header>
       <div class="logo"><strong>NAA</strong></div>
-      <div class="title">
+      <div>
         <h1>Noortje Adriane Alkemade</h1>
-        <p>3e jaars Cybersecurity student — Linux • Python • Ethical Hacking • Forensics</p>
+        <p>Cybersecurity Student</p>
       </div>
       <nav>
         <a href="#about">Over mij</a>
@@ -118,105 +189,62 @@
     <main>
 
       <section class="card grid-2" id="about">
-        <div class="about">
+        <div>
           <h2>Over mij</h2>
-          <p>
-            Ik ben Noortje, derdejaars Cyber Security student met een voorkeur voor
-            technische diepgang, hardware en digitale opsporing. Ik combineer praktische
-            hands-on ervaring (TryHackMe, HackTheBox, stage bij ethisch hackbedrijf)
-            met onderzoekende projecten uit studio's zoals DarkTech.
-          </p>
-
-          <div class="divider"></div>
-
-          <p style="color:var(--muted)">
-            Recent werk: uitgebreide Windows-architectuur analyse (Miro), slimme hardware
-            projecten (lamp, smartlock, powerplugs) en een AI-smarthome simulatie.
-            Komend semester begin ik met een minor Forensic Research Skills.
-          </p>
+          <p>Ik ben Noortje, derdejaars Cyber Security student met interesses in ethical hacking, digital forensics, OSINT en systeem­architecturen.</p>
+          <p>Ik werk graag met Linux, Bash, Python en Windows internals. Tijdens studio's zoals DarkTech en projecten op school heb ik gewerkt aan smart devices, analysewerk en AI-smarthome simulaties.</p>
         </div>
 
         <aside class="profile-meta">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-            <div>
-              <strong>Noortje Adriane Alkemade</strong>
-              <div style="color:var(--muted);font-size:13px">3e jaars Cyber Security</div>
-            </div>
-            <div style="text-align:right;color:var(--muted);font-size:13px">Amsterdam</div>
-          </div>
-
-          <div class="meta-row">
-            <div><strong>Basisskills</strong></div>
-            <div style="color:var(--muted);font-size:13px">Linux / Bash • Python • OSINT • Windows internals</div>
-            <div style="height:12px"></div>
-            <div><strong>Stage ervaring</strong></div>
-            <div style="color:var(--muted);font-size:13px">Ethisch hackbedrijf — TryHackMe / HTB write-ups & tooling</div>
-          </div>
+          <strong>Noortje A. Alkemade</strong>
+          <div>3e jaars Cyber Security</div>
         </aside>
       </section>
 
       <section class="card" id="skills">
         <h2>Skills</h2>
-        <div class="skills" style="margin-top:10px">
+        <div class="skills">
           <span class="skill">Linux / Bash</span>
           <span class="skill">Python</span>
-          <span class="skill">Ethical Hacking</span>
-          <span class="skill">OSINT</span>
-          <span class="skill">Windows Internals</span>
-          <span class="skill">Hardware Security</span>
-        </div>
+          <span class="skill">Planmatig werken</span>
       </section>
 
       <section class="card" id="projects">
         <h2>Projecten</h2>
-        <div class="projects" style="margin-top:12px">
+        <div class="project">
+          <h3>Miro — Windows Architectuur Map</h3>
+          <p>Uitgebreide systeemmap: kernel vs user mode, hardwarelagen, AD-structuur en protocollen.</p>
+          <p><a href="https://miro.com/app/board/uXjVI4IG2_4=/?share_link_id=600315991262" target="_blank">Bekijk Miro →</a></p>
+          <img src="Windows-system image 1.jpg" alt="Windows architecture part 1">
+          <img src="Windows-system image 2.jpg" alt="Windows architecture part 2">
+        </div>
 
-          <article class="project">
-            <h3>Miro — Windows Architectuur Map</h3>
-            <p>Een uitgebreide map met user mode, kernel mode, hardware componenten, AD en protocollen.</p>
-            <p style="margin-top:8px"><strong>Miro board:</strong> <a href="https://miro.com/app/board/uXjVI4IG2_4=/?share_link_id=600315991262" target="_blank" rel="noreferrer" style="color:var(--accent-lav)">Bekijk het Windows Architecture board →</a></p>
-            <img src="Windows-system image 1.jpg" alt="Windows architecture part 1">
-            <img src="Windows-system image 2.jpg" alt="Windows architecture part 2">
-          </article>
+        <div class="project">
+          <h3>DarkTech Studio — Smart Hardware</h3>
+          <p>Ontwikkeld: slimme lamp, smartlock, smart powerplugs en AI-smarthome simulatie.</p>
+        </div>
 
-          <article class="project">
-            <h3>DarkTech Studio — Smart Hardware</h3>
-            <p>Gebouwd: een web-bedienbare lamp, smartlock, smart powerplugs en een AI-smarthome simulatie.</p>
-            <p style="margin-top:8px;color:var(--muted)">Technische focus: secure firmware, web interfaces en threat modelling van IoT.</p>
-          </article>
+        <div class="project">
+          <h3>TryHackMe & HackTheBox</h3>
+          <p>Hands-on uitdagingen: privilege escalation, enumeration, offensive scripting.</p>
+        </div>
 
-          <article class="project">
-            <h3>TryHackMe & HackTheBox</h3>
-            <p>Hands-on challenges op het gebied van enumeration, privilege escalation en web exploitation — veel praktische ervaring opgedaan tijdens stage.</p>
-          </article>
-
-          <article class="project">
-            <h3>Komend semester — Forensic Research Skills</h3>
-            <p>Minor gericht op digitale forensics, OSINT-methoden, facial recognition en de forensische toepassing van DNA-analyses.</p>
-          </article>
-
+        <div class="project">
+          <h3>Forensic Research Skills (Minor)</h3>
+          <p>Komend semester: digitale forensics, OSINT, facial recognition & DNA-analyse.</p>
         </div>
       </section>
 
       <section class="card" id="contact">
         <h2>Contact</h2>
-        <div class="contact-grid" style="margin-top:12px">
+        <div class="contact-grid">
           <div class="contact-card">
             <strong>Email</strong>
-            <p style="color:var(--muted);margin-top:6px">noortje.alkemade@hva.nl</p>
-            <div style="height:12px"></div>
-            <strong>LinkedIn</strong>
-            <p style="color:var(--muted);margin-top:6px">(optioneel: voeg je LinkedIn link toe)</p>
+            <div style="margin-top:6px">noortje.alkemade@hva.nl</div>
           </div>
-
-          <div class="contact-card" style="display:flex;flex-direction:column;justify-content:space-between">
-            <div>
-              <strong>Download CV</strong>
-              <p style="color:var(--muted);margin-top:6px">Je kunt hier je CV toevoegen en een download-link plaatsen.</p>
-            </div>
-            <div style="text-align:right">
-              <a class="cta" href="#contact">Stuur bericht</a>
-            </div>
+          <div class="contact-card">
+            <strong>LinkedIn</strong>
+            <div style="margin-top:6px">Noortje A.</div>
           </div>
         </div>
       </section>
