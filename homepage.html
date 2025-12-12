@@ -5,146 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noortje Adriane Alkemade – Cybersecurity Portfolio</title>
   
-  <style>
-    :root {
-      /* DARK GREY + PASTEL CYBER HARMONY */
-      --bg: #1e1e1e;
-      --panel: #262626;
-      --text: #e6e6e6;
-      --accent-sage: #c7d8c4;
-      --accent-lilac: #d8c9e8;
-      --accent-rose: #e8cfc7;
-      --radius: 18px;
-      --shadow: 0 8px 20px rgba(0,0,0,0.35);
-    }
+<style>
+  :root {
+    /* LICHTE, SCHONE PALET */
+    --bg: #f5f5f5;           /* lichte grijze achtergrond */
+    --panel: #ffffff;        /* witte secties */
+    --text: #111111;         /* zwarte tekst */
+    --accent-green: #3a9d23; /* groene accenten */
+    --radius: 12px;
+    --shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Inter", sans-serif; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Inter", sans-serif; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
 
-    /* SOFT CYBER GLOW */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 25%, var(--accent-sage) 0%, transparent 40%),
-        radial-gradient(circle at 80% 75%, var(--accent-lilac) 0%, transparent 45%),
-        radial-gradient(circle at 50% 110%, var(--accent-rose) 0%, transparent 50%);
-      opacity: 0.15;
-      z-index: -1;
-    }
+  /* HEADER */
+  header {
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+  }
+  header h1 {
+    font-size: 4rem; /* grote zwarte letters */
+    color: var(--text);
+    margin-bottom: 0.7rem;
+  }
+  header p {
+    font-size: 1.3rem;
+    color: var(--accent-green);
+  }
 
-    /* HEADER */
-    header {
-      padding: 5rem 2rem 3rem;
-      text-align: center;
-      max-width: 850px;
-      margin: auto;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: var(--accent-lilac);
-      margin-bottom: 0.7rem;
-    }
-    header p {
-      font-size: 1.3rem;
-      color: var(--accent-sage);
-    }
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1.5rem 0;
+  }
+  nav a {
+    color: var(--accent-green);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    transition: .25s;
+  }
+  nav a:hover {
+    border-color: var(--text);
+  }
 
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      padding: 1.5rem 0;
-    }
-    nav a {
-      color: var(--accent-rose);
-      font-weight: 600;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-      transition: .25s;
-    }
-    nav a:hover {
-      border-color: var(--accent-lilac);
-    }
+  /* SECTIONS */
+  .section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: var(--panel);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #ddd;
+  }
+  .section h2 {
+    color: var(--accent-green);
+    margin-bottom: 1.8rem;
+    font-size: 1.9rem;
+  }
 
-    /* SECTIONS */
-    .section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 2.5rem;
-      background: var(--panel);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid #333;
-    }
-    .section h2 {
-      color: var(--accent-lilac);
-      margin-bottom: 1.8rem;
-      font-size: 1.9rem;
-    }
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media(max-width: 800px){
+    .about-grid { grid-template-columns: 1fr; }
+  }
 
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    @media(max-width: 800px){
-      .about-grid { grid-template-columns: 1fr; }
-    }
+  /* SKILLS */
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1rem;
+  }
+  .skill {
+    background: #e8f5e9;
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid #c8e6c9;
+    color: var(--accent-green);
+  }
 
-    /* SKILLS */
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 1rem;
-    }
-    .skill {
-      background: #313131;
-      padding: 1rem;
-      border-radius: var(--radius);
-      text-align: center;
-      font-weight: 600;
-      border: 1px solid #3d3d3d;
-      color: var(--accent-sage);
-    }
+  /* PROJECTS */
+  .project {
+    background: #ffffff;
+    padding: 1.7rem;
+    border-radius: var(--radius);
+    border: 1px solid #ddd;
+    margin-bottom: 2rem;
+  }
+  .project h3 {
+    color: var(--accent-green);
+    margin-bottom: .7rem;
+    font-size: 1.4rem;
+  }
+  .project img {
+    width: 100%;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    box-shadow: var(--shadow);
+  }
 
-    /* PROJECTS */
-    .project {
-      background: #2f2f2f;
-      padding: 1.7rem;
-      border-radius: var(--radius);
-      border: 1px solid #3a3a3a;
-      margin-bottom: 2rem;
-    }
-    .project h3 {
-      color: var(--accent-rose);
-      margin-bottom: .7rem;
-      font-size: 1.4rem;
-    }
-    .project img {
-      width: 100%;
-      border-radius: var(--radius);
-      margin-top: 1rem;
-      box-shadow: var(--shadow);
-    }
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2.5rem;
+    color: #555;
+    margin-top: 4rem;
+  }
+</style>
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 2.5rem;
-      color: #a6a6a6;
-      margin-top: 4rem;
-    }
-  </style>
 </head>
 
 <body>
