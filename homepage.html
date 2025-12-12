@@ -7,16 +7,16 @@
 
   <style>
     :root {
-      /* NEW SOFT CYBER PALETTE */
-      --bg: #e9e4df;             /* soft warm beige */
-      --panel: #f6f2ee;          /* lighter beige panel */
-      --text: #2b2a28;           /* soft dark brown/grey */
-      --accent1: #b9c8b3;        /* pastel sage green */
-      --accent2: #d8c9e8;        /* pastel lavender */
-      --accent3: #e7cfc7;        /* warm rose beige */
-      --cyber-dark: #4a3b47;     /* muted plum for subtle accents */
+      /* DARK GREY + PASTEL CYBER HARMONY */
+      --bg: #1f1f1f;           /* deep neutral dark grey */
+      --panel: #2a2a2a;        /* soft dark panel */
+      --text: #e7e7e7;         /* soft warm white */
+      --accent-sage: #c7d8c4;  /* pastel sage green */
+      --accent-lilac: #d8c9e8; /* pastel lilac */
+      --accent-rose: #e8cfc7;  /* pastel rose */
+      --accent-blue: #c7d4e8;  /* pastel muted cyber blue */
       --radius: 18px;
-      --shadow: 0 10px 25px rgba(0,0,0,0.08);
+      --shadow: 0 10px 25px rgba(0,0,0,0.35);
     }
 
     body {
@@ -27,26 +27,17 @@
       position: relative;
     }
 
-    /* CUTE CYBER BACKGROUND SHAPES */
+    /* SUBTLE CYBER PASTEL AURA */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 30%, var(--accent1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, var(--accent2) 0%, transparent 45%),
-        radial-gradient(circle at 50% 110%, var(--accent3) 0%, transparent 50%);
-      opacity: 0.45;
+        radial-gradient(circle at 20% 30%, var(--accent-sage) 0%, transparent 45%),
+        radial-gradient(circle at 80% 70%, var(--accent-lilac) 0%, transparent 45%),
+        radial-gradient(circle at 50% 110%, var(--accent-rose) 0%, transparent 55%);
+      opacity: 0.18;
       z-index: -1;
-    }
-
-    /* CYBER SYMBOLS */
-    .cyber-icons {
-      display: flex;
-      gap: 1rem;
-      font-size: 1.4rem;
-      opacity: 0.7;
-      margin-bottom: 1rem;
     }
 
     header {
@@ -54,11 +45,12 @@
       padding: 4rem 2rem 2rem;
     }
     header h1 {
-      color: var(--cyber-dark);
+      color: var(--accent-lilac);
       font-size: 3rem;
+      letter-spacing: -1px;
     }
     header p {
-      color: var(--accent3);
+      color: var(--accent-sage);
       font-size: 1.2rem;
       font-weight: 500;
     }
@@ -70,14 +62,14 @@
       padding: 1.5rem;
     }
     nav a {
-      color: var(--cyber-dark);
+      color: var(--accent-rose);
       text-decoration: none;
       font-weight: 600;
       border-bottom: 2px solid transparent;
       transition: .25s;
     }
     nav a:hover {
-      border-color: var(--accent2);
+      border-color: var(--accent-blue);
     }
 
     .section {
@@ -88,18 +80,19 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       position: relative;
+      border: 1px solid #3a3a3a;
     }
 
     .section h2 {
-      color: var(--cyber-dark);
+      color: var(--accent-lilac);
       margin-bottom: 1.5rem;
     }
 
     .project {
-      background: #ffffffcc;
+      background: #2f2f2f;
       padding: 1.5rem;
       border-radius: var(--radius);
-      border: 1px solid #ddd6ce;
+      border: 1px solid #3d3d3d;
       margin-bottom: 1.5rem;
     }
 
@@ -113,7 +106,7 @@
     footer {
       text-align: center;
       padding: 2rem;
-      color: #6f6862;
+      color: #b3b3b3;
       font-size: .9rem;
     }
   </style>
