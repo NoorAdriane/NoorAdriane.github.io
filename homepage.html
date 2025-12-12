@@ -6,167 +6,116 @@
   <title>Noortje Adriane Alkemade — Cybersecurity Portfolio</title>
 
   <style>
-    /* --------------------------------------------------
-       NEW THEME — Soft Cybersecurity Pastel Dark Mode
-       ✦ geen zwart
-       ✦ geen neon
-       ✦ zachte taupe / mauve / sage pastel
-       ✦ cute + forensic + cyber aesthetic
-    -------------------------------------------------- */
-
-    :root{
-      --bg: #2e2b30;               /* zacht mauve-taupe donker, niet zwart */
-      --bg-panel: #363338;         /* iets lichtere panelen */
-      --surface: rgba(255,255,255,0.05);
-
-      --text-main: #e7e2dd;        /* zacht warm wit, niet fel */
-      --text-muted: #c7c0b9;       /* pastel beige */
-
-      --accent-sage: #d8e3d5;      /* pastel sage groen */
-      --accent-lav: #e1d8ef;       /* lichte mauve/lavender pastel */
-      --accent-rose: #eadcd5;      /* zachte warm rose */
-      --accent-line: rgba(255,255,255,0.08);
-
-      --radius: 16px;
-      --shadow: 0 12px 28px rgba(0,0,0,0.35);
+    :root {
+      /* NEW SOFT CYBER PALETTE */
+      --bg: #e9e4df;             /* soft warm beige */
+      --panel: #f6f2ee;          /* lighter beige panel */
+      --text: #2b2a28;           /* soft dark brown/grey */
+      --accent1: #b9c8b3;        /* pastel sage green */
+      --accent2: #d8c9e8;        /* pastel lavender */
+      --accent3: #e7cfc7;        /* warm rose beige */
+      --cyber-dark: #4a3b47;     /* muted plum for subtle accents */
+      --radius: 18px;
+      --shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family: Inter, system-ui;
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    /* CUTE CYBER BACKGROUND SHAPES */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
       background:
-        radial-gradient(900px 600px at 5% 5%, rgba(216,227,213,0.06), transparent),
-        radial-gradient(900px 600px at 95% 95%, rgba(225,216,239,0.06), transparent),
-        var(--bg);
-      color:var(--text-main);
-      line-height:1.65;
-      padding-bottom:70px;
-    }
-    .container{max-width:1050px;margin:auto;padding:22px}
-
-    /* header */
-    header{display:flex;align-items:center;gap:18px;margin-bottom:12px}
-    .logo{
-      width:72px;height:72px;border-radius:var(--radius);
-      background:linear-gradient(135deg,var(--accent-rose),rgba(255,255,255,0.04));
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,0.08);
-    }
-    .logo strong{color:#4d3a42;font-size:20px}
-
-    header h1{font-size:27px;margin-bottom:4px;color:var(--text-main)}
-    header p{color:var(--text-muted);font-weight:500;font-size:15px}
-
-    nav{display:flex;gap:12px;margin-left:auto}
-    nav a{
-      color:var(--text-muted);
-      text-decoration:none;
-      padding:8px 12px;
-      border-radius:10px;
-      font-weight:600;
-      transition:0.3s;
-    }
-    nav a:hover{
-      background:rgba(255,255,255,0.08);
-      color:var(--text-main);
+        radial-gradient(circle at 20% 30%, var(--accent1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, var(--accent2) 0%, transparent 45%),
+        radial-gradient(circle at 50% 110%, var(--accent3) 0%, transparent 50%);
+      opacity: 0.45;
+      z-index: -1;
     }
 
-    /* cards */
-    .card{
-      background:var(--bg-panel);
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:var(--shadow);
-      padding:24px;
-      margin-top:22px;
-    }
-    .card h2{
-      color:var(--accent-lav);
-      font-size:20px;
-      margin-bottom:10px;
-      letter-spacing:0.3px;
+    /* CYBER SYMBOLS */
+    .cyber-icons {
+      display: flex;
+      gap: 1rem;
+      font-size: 1.4rem;
+      opacity: 0.7;
+      margin-bottom: 1rem;
     }
 
-    .grid-2{display:grid;grid-template-columns:1fr 330px;gap:22px}
-    @media(max-width:900px){.grid-2{grid-template-columns:1fr}}
-
-    /* about */
-    .about p{color:var(--text-muted);font-size:15px;margin-bottom:12px}
-
-    .profile-meta{
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.1);
-      padding:16px;
-      border-radius:var(--radius);
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
     }
-    .profile-meta strong{color:var(--accent-rose)}
-    .profile-meta div{font-size:14px;color:var(--text-muted)}
-
-    /* skills */
-    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .skill{
-      background:linear-gradient(180deg,rgba(256,256,256,0.08),rgba(256,256,256,0.04));
-      padding:10px 14px;
-      border-radius:var(--radius);
-      font-weight:700;
-      color:#4a3c45;
-      border:1px solid rgba(255,255,255,0.08);
+    header h1 {
+      color: var(--cyber-dark);
+      font-size: 3rem;
+    }
+    header p {
+      color: var(--accent3);
+      font-size: 1.2rem;
+      font-weight: 500;
     }
 
-    /* projects */
-    .project{
-      background:rgba(255,255,255,0.04);
-      border-radius:var(--radius);
-      padding:16px;
-      border:1px solid rgba(255,255,255,0.08);
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.5rem;
     }
-    .project h3{color:var(--accent-rose);margin-bottom:6px}
-    .project p{color:var(--text-muted);font-size:14px}
-    .project a{color:var(--accent-lav);text-decoration:none;font-weight:700}
-    .project img{width:100%;border-radius:12px;margin-top:12px;border:1px solid rgba(0,0,0,0.2)}
-
-    .divider{height:1px;background:var(--accent-line);margin:14px 0}
-
-    /* contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    @media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
-
-    .contact-card{
-      background:rgba(255,255,255,0.04);
-      padding:16px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,0.08);
+    nav a {
+      color: var(--cyber-dark);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: .25s;
     }
-    .cta{
-      display:inline-block;
-      margin-top:10px;
-      padding:10px 14px;
-      background:linear-gradient(90deg,var(--accent-sage),var(--accent-lav));
-      border-radius:var(--radius);
-      color:#3d353b;
-      font-weight:800;
-      text-decoration:none;
+    nav a:hover {
+      border-color: var(--accent2);
     }
 
-    footer{text-align:center;margin-top:40px;color:var(--text-muted);font-size:13px}
-
-    /* animations */
-    .fade{animation:fadeIn .6s ease both}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-    /* cute cybersecurity elements */
-    .cyber-badge{
-      margin-top:12px;
-      display:inline-block;
-      padding:6px 10px;
-      background:rgba(216,227,213,0.08);
-      border-radius:10px;
-      font-size:12px;
-      color:var(--accent-sage);
-      border:1px solid rgba(216,227,213,0.18);
+    .section {
+      max-width: 980px;
+      margin: 3rem auto;
+      padding: 2rem 2.5rem;
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
     }
 
+    .section h2 {
+      color: var(--cyber-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .project {
+      background: #ffffffcc;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid #ddd6ce;
+      margin-bottom: 1.5rem;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-top: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #6f6862;
+      font-size: .9rem;
+    }
   </style>
 </head>
 <body>
@@ -176,7 +125,7 @@
       <div class="logo"><strong>NAA</strong></div>
       <div>
         <h1>Noortje Adriane Alkemade</h1>
-        <p>Cybersecurity Student</p>
+        <p>Cybersecurity Student — Linux • Python • Forensics • OSINT</p>
       </div>
       <nav>
         <a href="#about">Over mij</a>
@@ -193,11 +142,14 @@
           <h2>Over mij</h2>
           <p>Ik ben Noortje, derdejaars Cyber Security student met interesses in ethical hacking, digital forensics, OSINT en systeem­architecturen.</p>
           <p>Ik werk graag met Linux, Bash, Python en Windows internals. Tijdens studio's zoals DarkTech en projecten op school heb ik gewerkt aan smart devices, analysewerk en AI-smarthome simulaties.</p>
+
+          <span class="cyber-badge">★ forensic • osint • hardware • linux</span>
         </div>
 
         <aside class="profile-meta">
           <strong>Noortje A. Alkemade</strong>
           <div>3e jaars Cyber Security</div>
+          <div style="margin-top:6px">Focus: Linux, Forensics, Hardware Security</div>
         </aside>
       </section>
 
@@ -206,7 +158,11 @@
         <div class="skills">
           <span class="skill">Linux / Bash</span>
           <span class="skill">Python</span>
-          <span class="skill">Planmatig werken</span>
+          <span class="skill">Ethical Hacking</span>
+          <span class="skill">OSINT</span>
+          <span class="skill">Windows Internals</span>
+          <span class="skill">Hardware Security</span>
+        </div>
       </section>
 
       <section class="card" id="projects">
@@ -244,7 +200,7 @@
           </div>
           <div class="contact-card">
             <strong>LinkedIn</strong>
-            <div style="margin-top:6px">Noortje A.</div>
+            <div style="margin-top:6px">(optioneel toevoegen)</div>
           </div>
         </div>
       </section>
