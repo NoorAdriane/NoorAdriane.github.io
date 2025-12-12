@@ -1,143 +1,174 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noortje Adriane Alkemade – Cybersecurity Portfolio</title>
-  
-<style>
-  :root {
-    /* LICHTE, SCHONE PALET */
-    --bg: #f5f5f5;           /* lichte grijze achtergrond */
-    --panel: #ffffff;        /* witte secties */
-    --text: #111111;         /* zwarte tekst */
-    --accent-green: #3a9d23; /* groene accenten */
-    --radius: 12px;
-    --shadow: 0 6px 18px rgba(0,0,0,0.1);
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noortje Adriane Alkemade - Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Algemene Stijl */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Inter", sans-serif; }
+    body {
+      background-color: #1f1f1f; /* donkergrijs, niet zwart */
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-  }
+    a {
+      color: #8ab4f8; /* subtiel blauwachtig accent */
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-  /* HEADER */
-  header {
-    padding: 5rem 2rem 3rem;
-    text-align: center;
-    max-width: 850px;
-    margin: auto;
-  }
-  header h1 {
-    font-size: 4rem; /* grote zwarte letters */
-    color: var(--text);
-    margin-bottom: 0.7rem;
-  }
-  header p {
-    font-size: 1.3rem;
-    color: var(--accent-green);
-  }
+    a:hover {
+      color: #ffffff;
+    }
 
-  /* NAV */
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    padding: 1.5rem 0;
-  }
-  nav a {
-    color: var(--accent-green);
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 4px;
-    transition: .25s;
-  }
-  nav a:hover {
-    border-color: var(--text);
-  }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      border-bottom: 1px solid #333;
+    }
 
-  /* SECTIONS */
-  .section {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 2.5rem;
-    background: var(--panel);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border: 1px solid #ddd;
-  }
-  .section h2 {
-    color: var(--accent-green);
-    margin-bottom: 1.8rem;
-    font-size: 1.9rem;
-  }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
 
-  /* ABOUT */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  @media(max-width: 800px){
-    .about-grid { grid-template-columns: 1fr; }
-  }
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
 
-  /* SKILLS */
-  .skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 1rem;
-  }
-  .skill {
-    background: #e8f5e9;
-    padding: 1rem;
-    border-radius: var(--radius);
-    text-align: center;
-    font-weight: 600;
-    border: 1px solid #c8e6c9;
-    color: var(--accent-green);
-  }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      background-color: #2b2b2b;
+      border-bottom: 1px solid #333;
+    }
 
-  /* PROJECTS */
-  .project {
-    background: #ffffff;
-    padding: 1.7rem;
-    border-radius: var(--radius);
-    border: 1px solid #ddd;
-    margin-bottom: 2rem;
-  }
-  .project h3 {
-    color: var(--accent-green);
-    margin-bottom: .7rem;
-    font-size: 1.4rem;
-  }
-  .project img {
-    width: 100%;
-    border-radius: var(--radius);
-    margin-top: 1rem;
-    box-shadow: var(--shadow);
-  }
+    nav a {
+      font-weight: 500;
+    }
 
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 2.5rem;
-    color: #555;
-    margin-top: 4rem;
-  }
-</style>
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
 
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #444;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Over Mij */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background-color: #2b2b2b;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .skill:hover {
+      transform: translateY(-3px);
+      background-color: #3a3a3a;
+    }
+
+    /* Projecten */
+    .project {
+      background-color: #2b2b2b;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .project img {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 1rem;
+      border-radius: 5px;
+      display: block;
+    }
+
+    .project ul {
+      margin-top: 1rem;
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    /* Contact */
+    #contact p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid #333;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* Buttons / Links */
+    .btn-linkedin {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #0077b5;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-linkedin:hover {
+      background-color: #005582;
+    }
+
+    @media(max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
   <header>
     <h1>Noortje Adriane Alkemade</h1>
-    <p>Cybersecurity Student · OSINT · Digital Forensics · Ethical Hacking</p>
+    <p>Cybersecurity Student</p>
   </header>
 
   <nav>
@@ -151,11 +182,10 @@
     <h2>Over Mij</h2>
     <div class="about-grid">
       <p>
-        Ik ben Noortje, een derdejaars Cyber Security student met een passie voor ethical hacking,
-        digitale forensics, OSINT en systeem-analyse. Ik hou van gestructureerde chaos: puzzels,
-        datapaden, logs en securityvraagstukken.
+        Ik ben Noortje, een derdejaars Cyber Security student met interesse in ethical hacking,
+        digitale forensics, OSINT en systeem-analyse. Ik werk graag in omgevingen waar analytisch
+        denken, creativiteit en structuur samenkomen.
       </p>
-
       <p>
         Tijdens mijn studie, stage en projecten werkte ik o.a. met Linux, Bash, Python, Windows internals,
         smart devices en netwerk-structuren. Binnenkort start ik mijn minor Forensic Research Skills
@@ -169,10 +199,9 @@
     <div class="skills-list">
       <div class="skill">Linux / Bash</div>
       <div class="skill">Python</div>
-      <div class="skill">OSINT</div>
-      <div class="skill">Ethical Hacking</div>
-      <div class="skill">Windows Internals</div>
-      <div class="skill">Hardware Security</div>
+      <div class="skill">Planmatig werken</div>
+      <div class="skill">Network Analysis</div>
+      <div class="skill">Digital Forensics</div>
     </div>
   </section>
 
@@ -186,8 +215,8 @@
         hardware layers, protocollen en Active Directory.
       </p>
       <a href="https://miro.com/app/board/uXjVI4IG2_4=/?share_link_id=600315991262" target="_blank">Bekijk mijn Miro Board →</a>
-      <img src="Windows-system image 1.jpg" alt="Windows architecture 1">
-      <img src="Windows-system image 2.jpg" alt="Windows architecture 2">
+      <img src="placeholder-windows1.jpg" alt="Windows architecture 1">
+      <img src="placeholder-windows2.jpg" alt="Windows architecture 2">
     </div>
 
     <div class="project">
@@ -196,10 +225,10 @@
         Tijdens deze studio werkte ik aan smart hardware projecten zoals:
       </p>
       <ul>
-        <li>Web-controlled lamp</li>
-        <li>Smartlock met web dashboard</li>
-        <li>Smart powerplugs</li>
-        <li>AI-driven smarthome simulatie</li>
+        <li>Web-controlled lamp - <em>Placeholder voor uitleg/foto</em></li>
+        <li>Smartlock met web dashboard - <em>Placeholder voor uitleg/foto</em></li>
+        <li>Smart powerplugs - <em>Placeholder voor uitleg/foto</em></li>
+        <li>AI-driven smarthome simulatie - <em>Placeholder voor uitleg/foto</em></li>
       </ul>
     </div>
 
@@ -216,17 +245,16 @@
         Forensisch onderzoek, OSINT, digitale opsporing, DNA-tech en facial recognition.
       </p>
     </div>
-
   </section>
 
   <section class="section" id="contact">
     <h2>Contact</h2>
     <p>Email: <strong>noortje.alkemade@hva.nl</strong></p>
+    <a href="https://www.linkedin.com/in/noortje-alkemade" target="_blank" class="btn-linkedin">LinkedIn →</a>
   </section>
 
   <footer>
     © 2025 Noortje Adriane Alkemade — Cybersecurity Portfolio
   </footer>
-
 </body>
 </html>
