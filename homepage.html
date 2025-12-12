@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Cybersecurity</title>
+  <title>Noortje Adriane Alkemade – Cybersecurity Portfolio</title>
   <style>
     :root {
-      --bg: #0d0d0f;
-      --card: #17171a;
-      --accent: #9bc4c7; /* pastel blauwgroen */
-      --text: #e7e7e7;
-      --subtle: #9b9b9b;
-      --radius: 14px;
+      --bg: #f5f1e6; /* zachte beige achtergrond */
+      --card: #fffdf8; /* lichte off-white kaarten */
+      --accent: #7a5c4d; /* donkerbruin accent */
+      --accent2: #bfa7c6; /* pastel paars */
+      --accent3: #a7c6b1; /* pastel groen */
+      --text: #2a2925;
+      --subtle: #6e6c67;
+      --radius: 16px;
     }
     * {
       margin: 0;
@@ -22,21 +24,23 @@
     body {
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     header {
-      padding: 2rem;
+      padding: 3rem 2rem 1rem;
       text-align: center;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
       color: var(--accent);
     }
     header p {
-      font-size: 1.1rem;
-      color: var(--subtle);
+      font-size: 1.2rem;
+      color: var(--accent3);
+      font-weight: 500;
     }
+
     nav {
       display: flex;
       justify-content: center;
@@ -44,70 +48,69 @@
       padding: 1.5rem;
     }
     nav a {
-      color: var(--accent);
+      color: var(--accent2);
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       transition: 0.2s;
     }
     nav a:hover {
-      opacity: 0.75;
+      opacity: 0.7;
     }
 
     .section {
-      max-width: 900px;
+      max-width: 950px;
       margin: 3rem auto;
-      padding: 2rem;
+      padding: 2rem 2.3rem;
       background: var(--card);
       border-radius: var(--radius);
-      box-shadow: 0 0 20px rgba(0,0,0,0.45);
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
     }
     .section h2 {
       color: var(--accent);
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      font-size: 2rem;
     }
 
-    /* About */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: 1.6rem;
     }
     @media(max-width: 700px) {
       .about-grid { grid-template-columns: 1fr; }
     }
 
-    /* Skills */
     .skills-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1rem;
     }
     .skill {
-      background: #1f1f22;
+      background: var(--accent3);
+      color: #1f1f1f;
       padding: 0.8rem 1rem;
       border-radius: var(--radius);
-      border: 1px solid #222227;
+      font-weight: 600;
       text-align: center;
     }
 
-    /* Projects */
     .project {
-      background: #1f1f22;
-      padding: 1.5rem;
+      background: #faf6ee;
+      padding: 1.6rem;
       border-radius: var(--radius);
-      border: 1px solid #222227;
+      border: 1px solid #e0dcd2;
       margin-bottom: 1.5rem;
     }
     .project h3 {
       color: var(--accent);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
     }
     .project a {
       display: inline-block;
-      margin-top: 0.6rem;
-      color: var(--accent);
+      margin-top: 0.7rem;
+      color: var(--accent2);
       text-decoration: none;
+      font-weight: 600;
     }
 
     footer {
@@ -120,8 +123,8 @@
 </head>
 <body>
   <header>
-    <h1>Jouw Naam</h1>
-    <p>Cybersecurity | Ethical Hacking | IT Security</p>
+    <h1>Noortje Adriane Alkemade</h1>
+    <p>Cybersecurity Student • Linux • Python • Ethical Hacking</p>
   </header>
 
   <nav>
@@ -135,13 +138,10 @@
     <h2>Over Mij</h2>
     <div class="about-grid">
       <p>
-        Ik ben een cybersecurity-enthousiast met een passie voor ethical hacking,
-        systeembeveiliging en digitale forensics. Mijn focus ligt op het
-        analyseren van kwetsbaarheden en het bouwen van veilige IT-oplossingen.
-      </p>
-      <p>
-        Ik werk graag in een minimalistische dark-mode sfeer, maar met een subtiele
-        pastel touch om het clean en professioneel te houden.
+        Ik ben Noortje, een derdejaars Cyber Security student met een liefde voor
+        techniek en een intresse in digital forensics, ethical hacking en security research. Ik werk
+        graag in omgevingen waar analytisch denken, creativiteit en structuur
+        samenkomen.
       </p>
     </div>
   </section>
@@ -149,12 +149,8 @@
   <section class="section" id="skills">
     <h2>Skills</h2>
     <div class="skills-list">
-      <div class="skill">Linux / Terminal</div>
-      <div class="skill">Penetration Testing</div>
+      <div class="skill">Linux / Bash</div>
       <div class="skill">Python</div>
-      <div class="skill">Networking</div>
-      <div class="skill">OSINT</div>
-      <div class="skill">Web Security</div>
     </div>
   </section>
 
@@ -162,15 +158,45 @@
     <h2>Projecten</h2>
 
     <div class="project">
-      <h3>CTF Write-ups</h3>
-      <p>Een verzameling write-ups van CTF challenges die ik heb opgelost.</p>
-      <a href="#">Bekijk project →</a>
+      <h3>TryHackMe & Hack The Box Progress</h3>
+      <p>
+        Tijdens mijn stage bij een ethisch hack bedrijf heb ik intensief gewerkt met
+        TryHackMe en HackTheBox. Hoewel het geen "klassieke" projecten zijn,
+        vertegenwoordigen ze mijn praktijkervaring met kwetsbaarheden, privilege
+        escalation en offensive tooling.
+      </p>
     </div>
 
     <div class="project">
-      <h3>Personal Vulnerability Scanner</h3>
-      <p>Kleine scanner in Python om simpele web kwetsbaarheden te detecteren.</p>
-      <a href="#">Bekijk project →</a>
+      <h3>Windows Architectuur Visualisatie (Miro)</h3>
+      <p>
+        Een enorme Miro-map waarin ik de complete Windows-omgeving heb ontleed:
+        user mode, kernel mode, hardware componenten, AD-omgeving en gebruikte
+        protocollen. Dit was een deep-dive in hoe Windows écht werkt.
+      </p>
+      <p><em>Tip: Je kunt de Miro-map exporteren als PNG of PDF en in je portfolio embedden.</em></p>
+    </div>
+
+    <div class="project">
+      <h3>DarkTech Studio – Hardware Smarthome Projecten</h3>
+      <p>
+        In de DarkTech studio heb ik gewerkt aan fysieke security & hardware. Ik
+        heb o.a. gebouwd:
+      </p>
+      <ul>
+        <li>Een lamp die via een website bestuurd kan worden</li>
+        <li>Een smartlock die via een webinterface te openen/sluiten is</li>
+        <li>Smart powerplugs met een web dashboard</li>
+        <li>Een AI-gedreven smarthome simulatie die zelf apparaten overneemt</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>Toekomst: Minor Forensic Research Skills</h3>
+      <p>
+        Komend semester ga ik me verdiepen in forensisch onderzoek: DNA in de
+        politiek, OSINT, facial recognition en digitale opsporing.
+      </p>
     </div>
 
   </section>
@@ -178,11 +204,11 @@
   <section class="section" id="contact">
     <h2>Contact</h2>
     <p>Wil je met mij in contact komen? Stuur gerust een bericht:</p>
-    <p>Email: <strong>jouwemail@example.com</strong></p>
+    <p>Email: <strong>noortje.alkemade@hva.nl</strong></p>
   </section>
 
   <footer>
-    © 2025 Jouw Naam — Cybersecurity Portfolio
+    © 2025 Noortje Adriane Alkemade — Cybersecurity Portfolio
   </footer>
 </body>
 </html>
