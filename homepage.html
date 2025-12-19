@@ -260,13 +260,54 @@
     <div class="project">
       <h3>Smart Hardware – DarkTech Studio</h3>
       <p>
+        Voor het project Punishing Home kregen wij de opdracht om te onderzoeken hoe we mensen konden laten stilstaan bij de ethische implicaties van smart home-devices, door middel van een bewust niet-ethische benadering.
+
+        Al snel kwamen we op het idee om een AI te ontwikkelen die geleidelijk de macht over je huis overneemt. Door de gebruiker deze controle te laten verliezen, wilden we confronteren hoe afhankelijk en kwetsbaar we worden wanneer technologie autonoom beslissingen voor ons gaat nemen.
+        
         Tijdens deze studio werkte ik aan smart hardware projecten zoals:
       </p>
       <ul>
-        <li>Web-controlled lamp <img src="lamp.jpg" alt="web-controlled lamp"></li>
-        <li>Smartlock met web dashboard <img src="smartlock.jpg" alt="Smarlock"></li>
-        <li>Smart powerplugs <img src="powerplugs.jpg" alt="Smart powerplug"></li>
-        <li>AI-driven smarthome simulatie <img src="smarthome-simulatie.jpg" alt="Smarthome simulatie"></li>
+        <li>Web-controlled lamp 
+          <p>  
+            Dit was ons eerste prototype, dat we presenteerden tijdens het Society 5.0-event. Het doel was om een AI de controle te geven over een smart home-device; hiervoor kozen we een lamp.
+
+            Dit was mijn eerste ervaring met hardware op deze manier. Tijdens het uittekenen van het schema kwam ik erachter dat ik een elektronische schakelaar nodig had. Ik heb hiervoor een MOSFET gebruikt. Achteraf gezien was een relay een betere keuze geweest, maar vanwege tijdsdruk (het prototype moest binnen twee weken af zijn) en omdat ik alleen een MOSFET tot mijn beschikking had, heb ik deze toch gebruikt.
+
+            Het nadeel hiervan was dat de Raspberry Pi niet optimaal beschermd was tegen spanningspieken. Desondanks werkte het prototype wel. Idealiter had ik een relay en een Arduino tussen de Raspberry Pi en de lamp gebruikt, maar gezien dit mijn eerste hardwareproject was, heb ik hier veel van geleerd.
+
+            Op de Raspberry Pi draaide een Flask-website waarmee de lamp via de AI aangestuurd kon worden.
+          </p>
+          <img src="webcontroledlamp.jpg" alt="web-controlled lamp"></li>
+        
+        <li>Smartlock met web dashboard 
+          <p> 
+            Voor het smart lock heb ik een schuifslot gebruikt dat met een motortje werd geopend en gesloten. Het motortje trok het slot open en duwde het weer dicht.
+
+            Het systeem was aangesloten op een Arduino, die op zijn beurt werd aangestuurd door een Raspberry Pi. Ook hier draaide op de Pi een Flask-website, waarmee de AI requests kon sturen om het slot te openen of te sluiten.
+          </p>
+          <img src="smartlock.jpg" alt="Smarlock"></li>
+        <li>Smart powerplugs 
+          <p>
+            Voor de stroomvoorziening hebben we gebruikgemaakt van wifi power plugs, zodat we niet direct met 220V-netspanning hoefden te werken. Voor onze eerste prototypes was een lagere spanning voldoende, maar voor het eindproduct niet.
+
+            Daarom zijn we overgestapt op smart plugs. Deze bleken echter niet versleuteld te zijn en het verdienmodel van de fabrikant was in het afgelopen jaar veranderd, waardoor lokale aansturing onmogelijk was geworden.
+
+            Als workaround heb ik de bijbehorende app via een emulator op mijn laptop laten draaien. Vervolgens heb ik een script geschreven dat softwarematig op de knop in de applicatie ‘drukt’. De aan/uit-status werd gecontroleerd door kleurveranderingen op specifieke coördinaten in het scherm te detecteren.
+          </p>
+          <img src="powerplugs.jpg" alt="Smart powerplug"></li>
+        <li>AI-driven smarthome simulatie 
+          <p>
+            Het eindproduct was een simulatie waarin de gebruiker langzaam de controle over zijn eigen huis verliest.
+
+            De ervaring begint onschuldig: je belt aan en wordt vriendelijk binnengelaten. De AI begroet je en vertelt dat alles voor je is klaargezet, de perfecte temperatuur, muziek en verlichting.
+
+          Wanneer je vervolgens zelf iets wilt aanpassen, zoals het licht aan- of uitzetten, reageert de AI steeds geïrriteerder. Volgens hem weet hij immers wat het beste voor je is. Hij is ontworpen om je te beschermen en is via zijn algoritmes tot de conclusie gekomen dat mensen een gevaar vormen voor zichzelf en geen verantwoordelijkheid kunnen nemen.
+
+          Daarom neemt hij de volledige controle over. Uiteindelijk sluit hij je zelfs op via het smart lock.
+
+          Met deze simulatie wilden we gebruikers laten ervaren hoe dun de grens is tussen gemak en controle, en hoe snel technologie kan omslaan van behulpzaam naar onderdrukkend.
+          </p>
+          <img src="smarthome-simulatie.jpg" alt="Smarthome simulatie"></li>
       </ul>
     </div>
 
